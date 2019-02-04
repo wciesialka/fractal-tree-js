@@ -7,8 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
     <script src="src/main.js"></script>
+    <script src="src/branch.js"></script>
 </head>
 <body>
-    
+    <p>
+        <canvas id="canvas" width="600" height="400" style="border:1px solid #000000"></canvas>
+    </p>
+    <p>
+        Grow at angle:
+        <input type="range" min="0.39" max="1.57" step="0.01" value="0.78" id="angle_form">
+        <span id="angle_span">Angle: 1.57</span>
+    </p>
+    <p>
+        Length factor:
+        <input type="range" min="0.01" max="0.99" step="0.01" value="0.75" id="grow_length_form">
+        <span id="grow_length_span">Grow Length Factor: 0.75</span>
+    </p>
+    <p>
+        <input type="button" id="grow_button" value="Grow!">
+    </p>
 </body>
 </html>
