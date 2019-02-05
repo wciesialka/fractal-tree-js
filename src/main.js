@@ -9,23 +9,19 @@ function init() {
     var canvas = document.getElementById("canvas");
 
     var angle_form = document.getElementById("angle_form");
-    var angle_span = document.getElementById("angle_span");
-    angle_span.innerHTML = "Angle: " + angle_form.value;
     var angle = parseFloat(angle_form.value);
     angle_form.onchange = function (ev) {
         var src = ev.srcElement;
         angle = parseFloat(src.value);
-        angle_span.innerHTML = "Angle: " + src.value;
+        //angle_span.innerHTML = "Angle: " + src.value;
     };
 
     var grow_length_form = document.getElementById("grow_length_form");
-    var grow_length_span = document.getElementById("grow_length_span");
-    grow_length_span.innerHTML = "Grow Length Factor: " + grow_length_form.value;
     var grow_length = parseFloat(grow_length_form.value);
     grow_length_form.onchange = function (ev) {
         var src = ev.srcElement;
         grow_length = parseFloat(src.value);
-        grow_length_span.innerHTML = "Grow Length Factor: " + src.value;
+        //grow_length_span.innerHTML = "Grow Length Factor: " + src.value;
     };
 
     tree = new Branch(null, 100, Math.PI + (Math.PI / 2));
