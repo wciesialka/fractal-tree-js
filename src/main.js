@@ -32,7 +32,7 @@ function init() {
 
     var grow_button = document.getElementById("grow_button");
     grow_button.onclick = function () {
-        tree.grow(grow_length, -angle, angle);
+        tree.grow(grow_length, angle);
     };
 
     tick = function () {
