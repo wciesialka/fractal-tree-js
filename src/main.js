@@ -9,30 +9,81 @@ function init() {
     var canvas = document.getElementById("canvas");
 
     var angle_form = document.getElementById("angle_form");
-    var angle_span = document.getElementById("angle_span");
-    angle_span.innerHTML = "Angle: " + angle_form.value;
+    var angle_num = document.getElementById("angle_num")
+    angle_num.value = angle_form.value;
     var angle = parseFloat(angle_form.value);
     angle_form.onchange = function (ev) {
         var src = ev.srcElement;
+        if(src.value < src.min)
+        {
+            src.value = src.min;
+        } else if(src.value > src.max)
+        {
+            src.value = src.max;
+        }
         angle = parseFloat(src.value);
-        angle_span.innerHTML = "Angle: " + src.value;
+        if(angle_num.value != src.value)
+        {
+            angle_num.value = src.value;
+        }
+    };
+    angle_num.onchange = function (ev) {
+        var src = ev.srcElement;
+        if(src.value < src.min)
+        {
+            src.value = src.min;
+        } else if (src.value > src.max)
+        {
+            src.value = src.max;
+        }
+        angle = parseFloat(src.value);
+        if(angle_form.value != src.value)
+        {
+            angle_form.value = src.value;
+        }
     };
 
     var grow_length_form = document.getElementById("grow_length_form");
-    var grow_length_span = document.getElementById("grow_length_span");
-    grow_length_span.innerHTML = "Grow Length Factor: " + grow_length_form.value;
+    var grow_length_num = document.getElementById("grow_length_num");
+    grow_length_num.value = grow_length_form.value;
     var grow_length = parseFloat(grow_length_form.value);
     grow_length_form.onchange = function (ev) {
         var src = ev.srcElement;
+        if(src.value < src.min)
+        {
+            src.value = src.min;
+        } else if(src.value > src.max)
+        {
+            src.value = src.max;
+        }
         grow_length = parseFloat(src.value);
-        grow_length_span.innerHTML = "Grow Length Factor: " + src.value;
+        if(grow_length_num.value != src.value)
+        {
+            grow_length_num.value = src.value;
+        }
     };
+    grow_length_num.onchange = function (ev) {
+        var src = ev.srcElement;
+        if(src.value < src.min)
+        {
+            src.value = src.min;
+        } else if(src.value > src.max)
+        {
+            src.value = src.max;
+        }
+        grow_length = parseFloat(src.value);
+        if(grow_length_form.value != src.value)
+        {
+            grow_length_form.value = src.value;
+        }
+
+    }
 
     tree = new Branch(null, 100, Math.PI + (Math.PI / 2));
 
     var grow_button = document.getElementById("grow_button");
     grow_button.onclick = function () {
-        tree.grow(grow_length, -angle, angle);
+        tree.grow(grow_length, angle);
     };
 
     tick = function () {
