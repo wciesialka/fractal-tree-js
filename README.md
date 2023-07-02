@@ -14,7 +14,7 @@ grow to watch the tree grow iteration by iteration.
 
 ## Authors
 
-- William Ciesialka
+- Willow Ciesialka
 
 ## License
 
